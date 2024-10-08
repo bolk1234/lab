@@ -1,15 +1,15 @@
 package by.Danik.lab.controllers;
 
-import by.Danik.lab.service.MovieServices;
+import by.Danik.lab.services.MovieService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MovieController {
-    private final MovieServices movieService;
+    private final MovieService movieService;
 
-    public MovieController(MovieServices movieService) {
+    public MovieController(MovieService movieService) {
         this.movieService = movieService;
     }
 
