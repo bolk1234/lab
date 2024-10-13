@@ -1,8 +1,6 @@
 package by.Danik.lab.services;
 
-import by.Danik.lab.exceptions.InternalServerExceptionHandler;
-import by.Danik.lab.exceptions.JsonProcessingExceptionHandler;
-import by.Danik.lab.exceptions.NotFoundException;
+import by.Danik.lab.exceptions.CustomException;
 import by.Danik.lab.models.movie.Movie;
 import by.Danik.lab.models.ResponseData;
 import by.Danik.lab.models.movie.MovieRequestParams;
@@ -20,7 +18,7 @@ import java.util.List;
  */
 @Service
 public class MovieService {
-    private final String BASE_URL = "https://api.kinopoisk.dev/v1.4/movie/search?"; // API кинопоиска
+    private final String BASE_URL = "https://api.kinopoisk.dev/v1.4/movie/search?";     // API кинопоиска
     private final String PAGE = "&page=";     // ответ может быть на несколько страниц, номер текущей страницы
     private final String LIMIT = "&limit=";     // сколько элементов на страницу, значение 1 значит забрать только один элемент
     private final String TITLE = "&query=";     // название фильма
@@ -35,9 +33,9 @@ public class MovieService {
     /**
      * Получить фильм (фильмы) по их имени
      * @param movieRequestParams - параметры запроса
-     * @return
+     * @return json ответ клиенту
      */
-    public String getMovieByTitle(MovieRequestParams movieRequestParams) throws JsonProcessingException {
+    public String getMovieByTitle(MovieRequestParams movieRequestParams) {
 
         // json ответ от сервера
         String responseJsonFromApi = getMoviesFromAPi(movieRequestParams);
@@ -52,7 +50,10 @@ public class MovieService {
 
         // если фильмов не осталось, значит ничего хорошего не нашлось
         if(movies.isEmpty()) {
-           throw new NotFoundException("По вашему запросу ничего не найдено", 400);
+           throw new CustomException.Builder()
+                   .status(404)
+                   .message("Запрашиваемый ресурс не найден")
+                   .build();
         }
 
         // json ответ клиенту, фильмы, без лишних полей
@@ -92,7 +93,7 @@ public class MovieService {
      * @param movies - фильмы
      * @return - json строка
      */
-    public String serializeResponseData(List<Movie> movies) throws JsonProcessingException {
+    public String serializeResponseData(List<Movie> movies) {
         // Создаем объект, который не может быть сериализован
         Object invalidObject = new Object() {
             @Override
@@ -102,8 +103,12 @@ public class MovieService {
         };
 
         // Пробуем сериализовать этот объект, что вызовет JsonProcessingException
-        return objectMapper.writeValueAsString(invalidObject);
-      //  return objectMapper.writeValueAsString(movies);
+        try {
+            return objectMapper.writeValueAsString(invalidObject);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+        //  return objectMapper.writeValueAsString(movies);
     }
 
     /**

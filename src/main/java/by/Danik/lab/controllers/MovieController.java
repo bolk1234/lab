@@ -23,7 +23,7 @@ public class MovieController {
     @GetMapping("/movies")
     public String getMovies(@RequestParam(value="title") @NotEmpty String title,
                             @RequestParam(value="page", defaultValue = "1") @Min(1) int page,
-                            @RequestParam(value = "limit", defaultValue = "5") @Min(1) int limit) throws JsonProcessingException {
+                            @RequestParam(value = "limit", defaultValue = "5") @Min(1) int limit) {
 
         MovieRequestParams movieRequestParams = new MovieRequestParams(title, page, limit);
         return movieService.getMovieByTitle(movieRequestParams);

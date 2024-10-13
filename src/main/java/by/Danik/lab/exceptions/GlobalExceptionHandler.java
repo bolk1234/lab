@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.method.annotation.HandlerMethodValidationException;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 /**
  * Обработчик исключений
@@ -24,18 +25,26 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ошибка валидации, проверьте значения");
     }
 
-    @ExceptionHandler(JsonProcessingException.class)
-    public ResponseEntity<String> handleJsonProcessingException(JsonProcessingException ex) {
-        //TODO логирование
-        System.out.println("jib,rf сериалзации" + ex.getMessage());
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Внутренняя ошибка сервера");
-    }
-
-
-    @ExceptionHandler({NotFoundException.class, InternalServerExceptionHandler.class, JsonProcessingExceptionHandler.class})
-    public ResponseEntity<String> handleMovieNotFoundException(NotFoundException ex) {
+    /**
+     * Исключения выброшенные в блоках catch
+     * @param ex
+     * @return
+     */
+    @ExceptionHandler(CustomException.class)
+    public ResponseEntity<String> handleMovieNotFoundException(CustomException ex) {
         //TODO логирование
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
+
+    /**
+     * Запрос на не существующий ресурс
+     * @param ex
+     * @return
+     */
+    @ExceptionHandler(NoResourceFoundException.class)
+    public ResponseEntity<String> handleNoResourceFoundException(NoResourceFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body("Запрашиваемый ресурс не найден");
     }
 
     /**

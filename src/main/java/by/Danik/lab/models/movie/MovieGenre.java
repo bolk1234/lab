@@ -1,24 +1,14 @@
 package by.Danik.lab.models.movie;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Жанр фильма
  */
+@Setter
+@Getter
 public class MovieGenre {
-        private String name;
-
-        @JsonProperty("name")
-        public void setName(String name) {
-        this.name = name;
-    }
-
-        public String getName() {
-            return this.name;
-        }
-
-    @Override
-    public String toString() {
-        return this.name;
-    }
+    private String name;
 }
