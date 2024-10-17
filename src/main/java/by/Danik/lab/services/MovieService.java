@@ -1,37 +1,57 @@
 package by.Danik.lab.services;
 
+import by.Danik.lab.SimpleCache;
 import by.Danik.lab.exceptions.CustomException;
-import by.Danik.lab.models.movie.Movie;
+import by.Danik.lab.models.movie.entities.Country;
+import by.Danik.lab.models.movie.entities.Genre;
+import by.Danik.lab.models.movie.entities.Movie;
 import by.Danik.lab.models.ResponseData;
 import by.Danik.lab.models.movie.MovieRequestParams;
+import by.Danik.lab.repositories.CountryRepository;
+import by.Danik.lab.repositories.GenreRepository;
+import by.Danik.lab.repositories.MovieRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Получить данные о фильмах из API кинопоиска
  */
 @Service
+@Slf4j
 public class MovieService {
+
     private final String BASE_URL = "https://api.kinopoisk.dev/v1.4/movie/search?";     // API кинопоиска
     private final String PAGE = "&page=";     // ответ может быть на несколько страниц, номер текущей страницы
     private final String LIMIT = "&limit=";     // сколько элементов на страницу, значение 1 значит забрать только один элемент
     private final String TITLE = "&query=";     // название фильма
-    private final RestTemplate restTemplate;
-    private final ObjectMapper objectMapper;
 
-    public MovieService(RestTemplate restTemplate, ObjectMapper objectMapper) {
-        this.restTemplate = restTemplate;
-        this.objectMapper = objectMapper;
-    }
+    @Autowired
+    private RestTemplate restTemplate;                                    // клиент для HTTP запросов
+    @Autowired
+    private ObjectMapper objectMapper;                                   // сериализация/десериализация (класс из библиотеки Jackson)
+    @Autowired
+    private SimpleCache<MovieRequestParams, String>  simpleCache;        // кеширование
+    @Autowired
+    private MovieRepository movieRepository;                            // репозиторий фильмов
+    @Autowired
+    private GenreRepository genreRepository;                            // репозиторий жанров
+    @Autowired
+    private CountryRepository countryRepository;                        // репозиторий стран
 
     /**
      * Получить фильм (фильмы) по их имени
+     * метод запроса GET
      * @param movieRequestParams - параметры запроса
      * @return json ответ клиенту
      */
@@ -39,25 +59,66 @@ public class MovieService {
 
         // json ответ от сервера
         String responseJsonFromApi = getMoviesFromAPi(movieRequestParams);
-        // ответ от сервера в виде объекта
-        ResponseData<Movie> responseDataFromApi = deserializeResponseData(responseJsonFromApi);
 
-        //TODO можно regexp проверить на точное совпадение, потому что кинопоиск ищет по неполному совпадению
-       /// MovieNotFoundException
+        // json ответ от сервера преобразуем в объект
+        ResponseData<Movie> responseDataFromApi = deserializeResponseData(responseJsonFromApi);
 
         //очистка от мусора
         List<Movie> movies = clearMovie(responseDataFromApi.getDocs());
 
         // если фильмов не осталось, значит ничего хорошего не нашлось
         if(movies.isEmpty()) {
-           throw new CustomException.Builder()
-                   .status(404)
-                   .message("Запрашиваемый ресурс не найден")
-                   .build();
+            logger.info("По запросу ничего не нашлось");
+
+            throw CustomException.builder()
+                    .status(HttpStatus.NOT_FOUND)
+                    .message("По Вашему запросу ничего не найдено")
+                    .build();
         }
+
+        // сохраняем в базу
+        saveMovies(movies);
+
+        logger.info("Количество фильмов в ответе =" + movies.size());
 
         // json ответ клиенту, фильмы, без лишних полей
         return serializeResponseData(movies);
+    }
+
+    /**
+     * Обработка bulk запроса
+     * нельзя выбрасывать исключения, иначе не будет работать bulk запрос
+     * метод POST
+     * @param movieRequestParams
+     * @return
+     */
+    public String getMoviesBulk(MovieRequestParams movieRequestParams){
+        if (movieRequestParams.getTitle().isEmpty()) {
+            logger.error("Название фильма не может быть пустым, возвращаю ответ");
+            return "Название фильма не может быть пустым";
+        }
+
+        // json ответ от сервера
+        String responseJsonFromApi = getMoviesFromAPi(movieRequestParams);
+
+        // json ответ от сервера преобразуем в объект
+        ResponseData<Movie> responseDataFromApi = deserializeResponseData(responseJsonFromApi);
+
+        //очистка от мусора
+        List<Movie> movies = clearMovie(responseDataFromApi.getDocs());
+
+        // если фильмов не осталось, значит ничего хорошего не нашлось
+        if(movies.isEmpty()) {
+            logger.info("По запросу ничего не нашлось");
+            return "По вашему запросу ничего не нашлось";
+        }
+
+        // сохраняем в базу
+        saveMovies(movies);
+
+        logger.info("Количество фильмов в ответе =" + movies.size());
+
+        return movies.toString();
     }
 
     /**
@@ -65,12 +126,37 @@ public class MovieService {
      * @param movieRequestParams - параметры запроса
      * @return json ответ
      */
-    public String getMoviesFromAPi(MovieRequestParams movieRequestParams) {
+    private String getMoviesFromAPi(MovieRequestParams movieRequestParams) {
+        logger.error("параметры запроса " + movieRequestParams.toString());
+        // проверяем возможно есть в кеше
+        if(simpleCache.containsKey(movieRequestParams)) {
+            logger.info("Ответ был отдан из кеша");
+            return simpleCache.get(movieRequestParams);
+        }
+
+        // get запрос на API кинопоиска с полученными от клиента параметрами
+        String jsonMovies = restTemplateGet(movieRequestParams);
+
+        //кешируем ответ
+        simpleCache.put(movieRequestParams, jsonMovies);
+
+        return jsonMovies;
+    }
+
+    /**
+     * Запрос к API кинопоиска
+     * @param movieRequestParams - параметры запроса, которые пришли от клиента
+     * @return json ответ
+     */
+    private String restTemplateGet(MovieRequestParams movieRequestParams) {
 
         String url = BASE_URL + PAGE + movieRequestParams.getPage() + LIMIT + movieRequestParams.getLimit() + TITLE + movieRequestParams.getTitle();
 
+        // ответ от кинопоиска
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
 
+        logger.info("был выполнен запрос к API кинопоиска");
+        // тело ответа
         return response.getBody();
     }
 
@@ -79,12 +165,16 @@ public class MovieService {
      * @param jsonString - json ответ
      * @return десериализованные данные ответа
      */
-    public ResponseData<Movie> deserializeResponseData(String jsonString) {
+    private ResponseData<Movie> deserializeResponseData(String jsonString) {
         try {
             return objectMapper.readValue(jsonString, new TypeReference<ResponseData<Movie>>() {});
         } catch (JsonProcessingException e) {
-            System.out.println("return null;" + e.getMessage());
-            return new ResponseData<Movie>();
+            logger.error("Ошибка десериализации json ответа от API кинопоиска: " + jsonString);
+
+            throw CustomException.builder()
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .message("Внутренняя ошибка сервера")
+                    .build();
         }
     }
 
@@ -93,22 +183,17 @@ public class MovieService {
      * @param movies - фильмы
      * @return - json строка
      */
-    public String serializeResponseData(List<Movie> movies) {
-        // Создаем объект, который не может быть сериализован
-        Object invalidObject = new Object() {
-            @Override
-            public String toString() {
-                throw new RuntimeException("Intentional error");
-            }
-        };
-
-        // Пробуем сериализовать этот объект, что вызовет JsonProcessingException
+    private String serializeResponseData(List<Movie> movies) {
         try {
-            return objectMapper.writeValueAsString(invalidObject);
+            return objectMapper.writeValueAsString(movies);
         } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
+            logger.error("Ошибка сериализации списка фильмов для ответа клиенту: " + movies.toString());
+
+            throw CustomException.builder()
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .message("Внутренняя ошибка сервера")
+                    .build();
         }
-        //  return objectMapper.writeValueAsString(movies);
     }
 
     /**
@@ -117,15 +202,72 @@ public class MovieService {
      * причина - ошибочная запись в их базе данных
      * надо такое удалить
      */
-    public List<Movie> clearMovie(List<Movie> movies) {
+    private List<Movie> clearMovie(List<Movie> movies) {
         // лямбда-выражение для удаления элементов из коллекции (Добавлена в java 8)
         movies.removeIf(temp -> temp.getName() == null || temp.getName().isEmpty());
         return movies;
     }
 
+    /**
+     * Сохранить все найденные фильмы в базе
+     * из-за того что достаём id из базы для жанров и стран, значения просто перезаписываются и нет дублирования
+     * @param movies - фильмы для записи в базу
+     */
+    @Transactional
+    private void saveMovies(List<Movie> movies) {
+        movies.forEach(this::updateGenreAndCountryInMovie);
 
+        movieRepository.saveAll(movies);
+    }
 
+    /**
+     * Обновить жанры и страны в фильме
+     * Если этого не сделать они будут дублироваться
+     * @param movies
+     */
+    private void updateGenreAndCountryInMovie(Movie movies) {
+        List<Genre> genres = processGenres(movies.getGenres());
+        List<Country> countries = processCountries(movies.getCountries());
+
+        movies.setGenres(genres);
+        movies.setCountries(countries);
+    }
+
+    /**
+     * Жанры имеют с фильмами связь многие ко многим
+     * Надо проверить если уже есть жанр в базе, сохраняем только если ещё в базе нет
+     * @param inputGenres - список жанров
+     * @return список стран, если страна в базе есть у неё будет известен id
+     */
+    private List<Genre> processGenres(List<Genre> inputGenres) {
+        List<Genre> genres = new ArrayList<>();
+        for (Genre genre : inputGenres) {
+            Genre existingGenre = genreRepository.findByName(genre.getName());
+            if (existingGenre == null) {
+                genres.add(genreRepository.save(genre));
+            } else {
+                genres.add(existingGenre);
+            }
+        }
+        return genres;
+    }
+
+    /**
+     * Страны имеют с фильмами связь многие ко многим
+     * Надо проверить если уже есть страна в базе, сохраняем только если ещё в базе нет
+     * @param inputCountries - список стран
+     * @return список стран, если страна в базе есть у неё будет известен id
+     */
+    private List<Country> processCountries(List<Country> inputCountries) {
+        List<Country> countries = new ArrayList<>();
+        for (Country country : inputCountries) {
+            Country existingCountry = countryRepository.findByName(country.getName());
+            if (existingCountry == null) {
+                countries.add(countryRepository.save(country));
+            } else {
+                countries.add(existingCountry);
+            }
+        }
+        return countries;
+    }
 }
-
-//TODO 401 Unauthorized: "{"message":"В запросе не указан токен!","error":"Unauthorized","statusCode":401}" обработка ответов
-//TODO 400 Bad Request: "{"message":["Поле id должно быть числом или массивом чисел!","Значение поля id должно быть в диапазоне от 250 до 7000000!"],"error":"Bad Request","statusCode":400}"

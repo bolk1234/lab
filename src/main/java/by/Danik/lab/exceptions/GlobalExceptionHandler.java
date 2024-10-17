@@ -1,6 +1,7 @@
 package by.Danik.lab.exceptions;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -8,21 +9,32 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.method.annotation.HandlerMethodValidationException;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
- * Обработчик исключений
+ * Обработчик всех исключений
  */
+@Slf4j
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
     /**
      * Валидация входных параметров в контроллерах
-     * Прикручена к аннотациям (в старых версиях спринг вызывается другой, более информативный класс)
      * @param ex - объект исключения
      * @return - заголовок и ответ ответа
      */
     @ExceptionHandler(HandlerMethodValidationException.class)
     public ResponseEntity<String> handleHandlerMethodValidationException(HandlerMethodValidationException ex) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ошибка валидации, проверьте значения");
+
+        // собираем все ошибки валидации
+        List<String> errorMessages = new ArrayList<>();
+        ex.getAllErrors().forEach(error -> errorMessages.add(error.getDefaultMessage()));
+        logger.info("------------------------Пришёл GET запрос----------------------------");
+        logger.warn("Валидация не пройдена, причина: " + errorMessages);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 
     /**
@@ -32,19 +44,8 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(CustomException.class)
     public ResponseEntity<String> handleMovieNotFoundException(CustomException ex) {
-        //TODO логирование
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
-    }
-
-    /**
-     * Запрос на не существующий ресурс
-     * @param ex
-     * @return
-     */
-    @ExceptionHandler(NoResourceFoundException.class)
-    public ResponseEntity<String> handleNoResourceFoundException(NoResourceFoundException ex) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body("Запрашиваемый ресурс не найден");
+        // логирование в там где исключение выбрасывается
+        return ResponseEntity.status(ex.getStatus()).body(ex.getMessage());
     }
 
     /**
@@ -54,7 +55,8 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleGenericException(Exception ex) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("глобальное мля: " + ex.getClass().toString() + " Причина = " + ex.getMessage());
+        logger.error("ВНИМАНИЕ: не перехваченное исключение: имя класса " + ex.getClass().toString() + " Причина = " + ex.getMessage());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Внутренняя ошибка сервера");
     }
 
 

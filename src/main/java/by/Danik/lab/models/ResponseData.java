@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Setter
 @Getter
+@ToString
 public class ResponseData<T> {
     private List<T> docs;           // объекты пришедшие в ответе
     private int total;              // всего совпадений в базе кинопоиска
