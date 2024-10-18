@@ -1,5 +1,6 @@
 package by.Danik.lab.controllers;
 
+import by.Danik.lab.models.ResponseDataToClient;
 import by.Danik.lab.models.movie.MovieRequestParams;
 import by.Danik.lab.services.MovieService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -7,8 +8,12 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,15 +34,13 @@ public class MovieController {
      * @return
      */
     @GetMapping("/movies")
-    public String getMovies(
+    public ResponseEntity<String> getMovies(
             @RequestParam(value="title") @NotEmpty(message = "Название фильма не может быть пустым") @Pattern(regexp = "^[A-Za-zА-Яа-я0-9\\s]+$", message = "Название фильма недопустимо") String title,
             @RequestParam(value="page", defaultValue = "1") @Positive(message = "Номер страницы может быть только положительным") int page,
             @RequestParam(value = "limit", defaultValue = "1") @Positive(message = "Вы действительно желаете получить меньше одного фильма") @Max(value = 1000, message = "Кинопоиск не поддерживает больше 1000 значений на раз") int limit) {
         MovieRequestParams movieRequestParams = new MovieRequestParams(title, page, limit);
 
-        logger.info("------------------------Пришёл GET запрос----------------------------");
-
-        return movieService.getMovieByTitle(movieRequestParams);
+        return ResponseEntity.ok(movieService.methodGet(movieRequestParams));
     }
 
     /**
@@ -46,19 +49,22 @@ public class MovieController {
      * @return
      */
     @PostMapping("/movies/bulk")
-    public String getMoviesBulk(@RequestBody List<String> titles) {
-
-        logger.info("------------------------Пришёл bulk запрос----------------------------");
-
-        // stream - превращает в поток данных
-        // map - один из методов stream, принимает параметр лямбда-выражение, создаёт новый поток, не изменяя исходный
-        // toList() - собирает всё что вернёт map в ArrayList
-        return titles.stream()
-                //лямбда выражение, для каждого элемента списка вызвать метод getMoviesBulk и передать параметры запроса
-                .map(title -> movieService.getMoviesBulk(new MovieRequestParams(title)))
-                .toList().toString();
+    public ResponseEntity<String> getMoviesBulk(@RequestBody List<String> titles) {
+        // статус ответа 200 ОК, раз сюда дошли значит всё хорошо
+        return ResponseEntity.ok(movieService.methodPostBulk(titles));
     }
-
-
 }
 
+
+
+/**
+ * ^ — начало строки.
+ * A-Za-z — любые латинские буквы (верхний и нижний регистр).
+ * А-Яа-я — любые кириллические буквы (верхний и нижний регистр).
+ * 0-9 — любые цифры.
+ * \s — пробелы.
+ * \W — любые небуквенные символы (например, (), ', -, :, ., !, ?).
+ * \d — любая цифра (0-9).
+ * + — один или более раз.
+ * $ — конец строки.
+ */

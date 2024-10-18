@@ -2,10 +2,11 @@ package by.Danik.lab.services;
 
 import by.Danik.lab.SimpleCache;
 import by.Danik.lab.exceptions.CustomException;
+import by.Danik.lab.models.ResponseDataToClient;
 import by.Danik.lab.models.movie.entities.Country;
 import by.Danik.lab.models.movie.entities.Genre;
 import by.Danik.lab.models.movie.entities.Movie;
-import by.Danik.lab.models.ResponseData;
+import by.Danik.lab.models.ResponseDataFromApi;
 import by.Danik.lab.models.movie.MovieRequestParams;
 import by.Danik.lab.repositories.CountryRepository;
 import by.Danik.lab.repositories.GenreRepository;
@@ -50,59 +51,43 @@ public class MovieService {
     private CountryRepository countryRepository;                        // репозиторий стран
 
     /**
-     * Получить фильм (фильмы) по их имени
-     * метод запроса GET
+     * Пришёл запрос на фильмы методом GET
      * @param movieRequestParams - параметры запроса
-     * @return json ответ клиенту
+     * @return
      */
-    public String getMovieByTitle(MovieRequestParams movieRequestParams) {
-
-        // json ответ от сервера
-        String responseJsonFromApi = getMoviesFromAPi(movieRequestParams);
-
-        // json ответ от сервера преобразуем в объект
-        ResponseData<Movie> responseDataFromApi = deserializeResponseData(responseJsonFromApi);
-
-        //очистка от мусора
-        List<Movie> movies = clearMovie(responseDataFromApi.getDocs());
-
-        // если фильмов не осталось, значит ничего хорошего не нашлось
-        if(movies.isEmpty()) {
-            logger.info("По запросу ничего не нашлось");
-
-            throw CustomException.builder()
-                    .status(HttpStatus.NOT_FOUND)
-                    .message("По Вашему запросу ничего не найдено")
-                    .build();
-        }
-
-        // сохраняем в базу
-        saveMovies(movies);
-
-        logger.info("Количество фильмов в ответе =" + movies.size());
-
-        // json ответ клиенту, фильмы, без лишних полей
-        return serializeResponseData(movies);
+    public String methodGet(MovieRequestParams movieRequestParams) {
+        return getMovieByTitle(movieRequestParams);
     }
 
     /**
      * Обработка bulk запроса
-     * нельзя выбрасывать исключения, иначе не будет работать bulk запрос
      * метод POST
-     * @param movieRequestParams
+     * @param titles
      * @return
      */
-    public String getMoviesBulk(MovieRequestParams movieRequestParams){
-        if (movieRequestParams.getTitle().isEmpty()) {
-            logger.error("Название фильма не может быть пустым, возвращаю ответ");
-            return "Название фильма не может быть пустым";
-        }
+    public String methodPostBulk(List<String> titles){
+
+        // stream - превращает в поток данных
+        // map - один из методов stream, принимает параметр лямбда-выражение, создаёт новый поток, не изменяя исходный
+        // toList() - собирает всё что вернёт map в ArrayList
+        return titles.stream()
+                //лямбда выражение, для каждого элемента списка вызвать метод getMovieByTitle и передать параметры запроса
+                .map(title -> getMovieByTitle(new MovieRequestParams(title)))
+                .toList().toString();
+    }
+
+    /**
+     * Получить фильм (фильмы) по их имени
+     * @param movieRequestParams - параметры запроса
+     * @return ResponseDataToClient - объект ответа клиенту
+     */
+    private String getMovieByTitle(MovieRequestParams movieRequestParams) {
 
         // json ответ от сервера
         String responseJsonFromApi = getMoviesFromAPi(movieRequestParams);
 
         // json ответ от сервера преобразуем в объект
-        ResponseData<Movie> responseDataFromApi = deserializeResponseData(responseJsonFromApi);
+        ResponseDataFromApi<Movie> responseDataFromApi = deserializeResponseData(responseJsonFromApi);
 
         //очистка от мусора
         List<Movie> movies = clearMovie(responseDataFromApi.getDocs());
@@ -110,15 +95,13 @@ public class MovieService {
         // если фильмов не осталось, значит ничего хорошего не нашлось
         if(movies.isEmpty()) {
             logger.info("По запросу ничего не нашлось");
-            return "По вашему запросу ничего не нашлось";
+        } else {
+            // сохраняем в базу
+            saveMovies(movies);
+            logger.info("Количество фильмов в ответе =" + movies.size());
         }
 
-        // сохраняем в базу
-        saveMovies(movies);
-
-        logger.info("Количество фильмов в ответе =" + movies.size());
-
-        return movies.toString();
+        return serializeResponseData(movies);
     }
 
     /**
@@ -165,9 +148,9 @@ public class MovieService {
      * @param jsonString - json ответ
      * @return десериализованные данные ответа
      */
-    private ResponseData<Movie> deserializeResponseData(String jsonString) {
+    private ResponseDataFromApi<Movie> deserializeResponseData(String jsonString) {
         try {
-            return objectMapper.readValue(jsonString, new TypeReference<ResponseData<Movie>>() {});
+            return objectMapper.readValue(jsonString, new TypeReference<ResponseDataFromApi<Movie>>() {});
         } catch (JsonProcessingException e) {
             logger.error("Ошибка десериализации json ответа от API кинопоиска: " + jsonString);
 
@@ -204,7 +187,9 @@ public class MovieService {
      */
     private List<Movie> clearMovie(List<Movie> movies) {
         // лямбда-выражение для удаления элементов из коллекции (Добавлена в java 8)
-        movies.removeIf(temp -> temp.getName() == null || temp.getName().isEmpty());
+        if (movies.removeIf(temp -> temp.getName() == null || temp.getName().isEmpty())) {
+            logger.info("был удалён как минимум один фильм с пустым именем");
+        }
         return movies;
     }
 

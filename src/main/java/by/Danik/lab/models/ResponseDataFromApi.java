@@ -1,8 +1,6 @@
 package by.Danik.lab.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -19,7 +17,7 @@ import java.util.List;
 @Setter
 @Getter
 @ToString
-public class ResponseData<T> {
+public class ResponseDataFromApi<T> {
     private List<T> docs;           // объекты пришедшие в ответе
     private int total;              // всего совпадений в базе кинопоиска
     private int limit;              // сколько фильмов пришло в ответе

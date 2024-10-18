@@ -32,7 +32,6 @@ public class GlobalExceptionHandler {
         // собираем все ошибки валидации
         List<String> errorMessages = new ArrayList<>();
         ex.getAllErrors().forEach(error -> errorMessages.add(error.getDefaultMessage()));
-        logger.info("------------------------Пришёл GET запрос----------------------------");
         logger.warn("Валидация не пройдена, причина: " + errorMessages);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
@@ -44,7 +43,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(CustomException.class)
     public ResponseEntity<String> handleMovieNotFoundException(CustomException ex) {
-        // логирование в там где исключение выбрасывается
+        // логирование там где исключение выбрасывается
         return ResponseEntity.status(ex.getStatus()).body(ex.getMessage());
     }
 
@@ -55,7 +54,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleGenericException(Exception ex) {
-        logger.error("ВНИМАНИЕ: не перехваченное исключение: имя класса " + ex.getClass().toString() + " Причина = " + ex.getMessage());
+        logger.error("ВНИМАНИЕ: не перехваченное исключение: имя класса " + ex.getClass() + " Причина = " + ex.getMessage());
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Внутренняя ошибка сервера");
     }
 
