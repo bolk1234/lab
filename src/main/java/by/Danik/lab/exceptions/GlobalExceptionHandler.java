@@ -1,18 +1,16 @@
 package by.Danik.lab.exceptions;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.method.annotation.HandlerMethodValidationException;
-import org.springframework.web.servlet.resource.NoResourceFoundException;
+
 
 import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
 
 /**
  * Обработчик всех исключений
@@ -33,7 +31,7 @@ public class GlobalExceptionHandler {
         List<String> errorMessages = new ArrayList<>();
         ex.getAllErrors().forEach(error -> errorMessages.add(error.getDefaultMessage()));
         logger.warn("Валидация не пройдена, причина: " + errorMessages);
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessages.toString());
     }
 
     /**

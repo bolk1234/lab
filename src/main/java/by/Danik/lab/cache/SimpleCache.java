@@ -1,4 +1,4 @@
-package by.Danik.lab;
+package by.Danik.lab.cache;
 
 import org.springframework.stereotype.Component;
 

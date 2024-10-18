@@ -1,9 +1,10 @@
-package by.Danik.lab;
+package by.Danik.lab.config;
 
+import by.Danik.lab.cache.SimpleCache;
 import by.Danik.lab.interceptors.ClientInterceptor;
 import by.Danik.lab.interceptors.RestTemplateInterceptor;
-import by.Danik.lab.models.ResponseDataToClient;
-import by.Danik.lab.models.movie.MovieRequestParams;
+import by.Danik.lab.models.RequestCounter;
+import by.Danik.lab.models.movie.entities.Movie;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,6 +17,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @Configuration
 public class AppConfig implements WebMvcConfigurer {
@@ -45,7 +48,7 @@ public class AppConfig implements WebMvcConfigurer {
      * @return
      */
     @Bean
-    public SimpleCache<MovieRequestParams, String> movieRequestParamsCache() {
+    public SimpleCache<String, List<Movie>> movieSimpleCache() {
         return new SimpleCache<>();
     }
 
@@ -56,6 +59,20 @@ public class AppConfig implements WebMvcConfigurer {
     @Bean
     public ObjectMapper objectMapper() {
         return new ObjectMapper();
+    }
+
+    /**
+     * Счётчик подсчитывающий количество обращений к сервису фильмы
+     * @return
+     */
+    @Bean
+    public RequestCounter requestCounter() {
+        return new RequestCounter();
+    }
+
+    @Bean
+    public ExecutorService executorService() {
+        return Executors.newFixedThreadPool(10);
     }
 
     /**

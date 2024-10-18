@@ -1,8 +1,8 @@
 package by.Danik.lab.services;
 
-import by.Danik.lab.SimpleCache;
+import by.Danik.lab.cache.SimpleCache;
 import by.Danik.lab.exceptions.CustomException;
-import by.Danik.lab.models.ResponseDataToClient;
+import by.Danik.lab.models.RequestCounter;
 import by.Danik.lab.models.movie.entities.Country;
 import by.Danik.lab.models.movie.entities.Genre;
 import by.Danik.lab.models.movie.entities.Movie;
@@ -24,6 +24,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
 
 /**
  * Получить данные о фильмах из API кинопоиска
@@ -42,20 +43,25 @@ public class MovieService {
     @Autowired
     private ObjectMapper objectMapper;                                   // сериализация/десериализация (класс из библиотеки Jackson)
     @Autowired
-    private SimpleCache<MovieRequestParams, String>  simpleCache;        // кеширование
+    private SimpleCache<String, List<Movie>> movieSimpleCache;        // кеширование фильмов title/фильмы из АПИ
     @Autowired
     private MovieRepository movieRepository;                            // репозиторий фильмов
     @Autowired
     private GenreRepository genreRepository;                            // репозиторий жанров
     @Autowired
     private CountryRepository countryRepository;                        // репозиторий стран
+    @Autowired
+    private RequestCounter requestCounter;                              // счётчик обращений к текущему сервису
+    @Autowired
+    ExecutorService executorService;
 
-    /**
-     * Пришёл запрос на фильмы методом GET
-     * @param movieRequestParams - параметры запроса
-     * @return
-     */
-    public String methodGet(MovieRequestParams movieRequestParams) {
+
+        /**
+         * Пришёл запрос на фильмы методом GET
+         * @param movieRequestParams - параметры запроса
+         * @return
+         */
+    public List<Movie> methodGet(MovieRequestParams movieRequestParams) {
         return getMovieByTitle(movieRequestParams);
     }
 
@@ -65,7 +71,7 @@ public class MovieService {
      * @param titles
      * @return
      */
-    public String methodPostBulk(List<String> titles){
+    public List<List<Movie>> methodPostBulk(List<String> titles){
 
         // stream - превращает в поток данных
         // map - один из методов stream, принимает параметр лямбда-выражение, создаёт новый поток, не изменяя исходный
@@ -73,18 +79,27 @@ public class MovieService {
         return titles.stream()
                 //лямбда выражение, для каждого элемента списка вызвать метод getMovieByTitle и передать параметры запроса
                 .map(title -> getMovieByTitle(new MovieRequestParams(title)))
-                .toList().toString();
+                .toList();
     }
 
     /**
      * Получить фильм (фильмы) по их имени
      * @param movieRequestParams - параметры запроса
-     * @return ResponseDataToClient - объект ответа клиенту
+     * @return json строка
      */
-    private String getMovieByTitle(MovieRequestParams movieRequestParams) {
+    private List<Movie> getMovieByTitle(MovieRequestParams movieRequestParams) {
+
+        // увеличиваем счётчик обращений в отдельном потоке, чтобы не блокировать текущий
+        executorService.submit(requestCounter::increment);
+
+        // проверяем возможно есть в кеше
+        if(movieSimpleCache.containsKey(movieRequestParams.getTitle())) {
+            logger.info("Ответ был отдан из кеша");
+            return movieSimpleCache.get(movieRequestParams.getTitle());
+        }
 
         // json ответ от сервера
-        String responseJsonFromApi = getMoviesFromAPi(movieRequestParams);
+        String responseJsonFromApi = getJsonFromAPi(movieRequestParams);
 
         // json ответ от сервера преобразуем в объект
         ResponseDataFromApi<Movie> responseDataFromApi = deserializeResponseData(responseJsonFromApi);
@@ -101,7 +116,10 @@ public class MovieService {
             logger.info("Количество фильмов в ответе =" + movies.size());
         }
 
-        return serializeResponseData(movies);
+        //кешируем ответ
+        movieSimpleCache.put(movieRequestParams.getTitle(), movies);
+
+        return movies;
     }
 
     /**
@@ -109,21 +127,8 @@ public class MovieService {
      * @param movieRequestParams - параметры запроса
      * @return json ответ
      */
-    private String getMoviesFromAPi(MovieRequestParams movieRequestParams) {
-        logger.error("параметры запроса " + movieRequestParams.toString());
-        // проверяем возможно есть в кеше
-        if(simpleCache.containsKey(movieRequestParams)) {
-            logger.info("Ответ был отдан из кеша");
-            return simpleCache.get(movieRequestParams);
-        }
-
-        // get запрос на API кинопоиска с полученными от клиента параметрами
-        String jsonMovies = restTemplateGet(movieRequestParams);
-
-        //кешируем ответ
-        simpleCache.put(movieRequestParams, jsonMovies);
-
-        return jsonMovies;
+    private String getJsonFromAPi(MovieRequestParams movieRequestParams) {
+        return restTemplateGet(movieRequestParams);
     }
 
     /**
@@ -161,11 +166,11 @@ public class MovieService {
         }
     }
 
-    /**
+    /** Не то чтобы и нужен
      * Сериализация фильмов для отправки клиенту
      * @param movies - фильмы
      * @return - json строка
-     */
+
     private String serializeResponseData(List<Movie> movies) {
         try {
             return objectMapper.writeValueAsString(movies);
@@ -178,6 +183,7 @@ public class MovieService {
                     .build();
         }
     }
+     */
 
     /**
      * API кинопоиска иногда возвращает некорректные результаты,

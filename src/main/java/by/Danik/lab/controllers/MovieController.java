@@ -1,21 +1,16 @@
 package by.Danik.lab.controllers;
 
-import by.Danik.lab.models.ResponseDataToClient;
 import by.Danik.lab.models.movie.MovieRequestParams;
+import by.Danik.lab.models.movie.entities.Movie;
 import by.Danik.lab.services.MovieService;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Всё запросы связанные с фильмами
@@ -34,7 +29,7 @@ public class MovieController {
      * @return
      */
     @GetMapping("/movies")
-    public ResponseEntity<String> getMovies(
+    public ResponseEntity<List<Movie>> getMovies(
             @RequestParam(value="title") @NotEmpty(message = "Название фильма не может быть пустым") @Pattern(regexp = "^[A-Za-zА-Яа-я0-9\\s]+$", message = "Название фильма недопустимо") String title,
             @RequestParam(value="page", defaultValue = "1") @Positive(message = "Номер страницы может быть только положительным") int page,
             @RequestParam(value = "limit", defaultValue = "1") @Positive(message = "Вы действительно желаете получить меньше одного фильма") @Max(value = 1000, message = "Кинопоиск не поддерживает больше 1000 значений на раз") int limit) {
@@ -49,7 +44,7 @@ public class MovieController {
      * @return
      */
     @PostMapping("/movies/bulk")
-    public ResponseEntity<String> getMoviesBulk(@RequestBody List<String> titles) {
+    public ResponseEntity<List<List<Movie>>> getMoviesBulk(@RequestBody List<String> titles) {
         // статус ответа 200 ОК, раз сюда дошли значит всё хорошо
         return ResponseEntity.ok(movieService.methodPostBulk(titles));
     }

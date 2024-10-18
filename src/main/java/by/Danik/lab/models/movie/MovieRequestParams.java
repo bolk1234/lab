@@ -28,6 +28,6 @@ public class MovieRequestParams {
     public MovieRequestParams(String title) {
         this.title = title;
         this.page = 1;
-        this.limit = 10;
+        this.limit = 3;
     }
 }
