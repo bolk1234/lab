@@ -17,7 +17,7 @@ public class ClientInterceptor implements HandlerInterceptor {
     // Вызывается перед тем как будет отдано контроллеру
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-
+    // если метод пост и нет тела запроса дальше можно не идти
         return true;
     }
 

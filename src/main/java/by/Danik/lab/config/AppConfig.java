@@ -70,13 +70,17 @@ public class AppConfig implements WebMvcConfigurer {
         return new RequestCounter();
     }
 
+    /**
+     * Управление потоками, создаём пул потоков размером 10
+     * @return
+     */
     @Bean
     public ExecutorService executorService() {
         return Executors.newFixedThreadPool(10);
     }
 
     /**
-     * регистрируем свой инцептор для работы с клиентскими заголовками
+     * Регистрируем свой интерцептор для работы с клиентскими заголовками
      * @param registry
      */
     @Override
