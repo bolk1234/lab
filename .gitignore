@@ -39,3 +39,5 @@ build/
 
 ### Токен Кинопоска ###
 application.properties
+#логи
+logs/
