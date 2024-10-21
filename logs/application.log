@@ -1,1 +1,1052 @@
 2024-10-20 10:17:09 [WARN] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9h39m2s55ms211µs300ns).
+2024-10-21 08:59:20 [INFO] - Starting Main using Java 21.0.1 with PID 28320 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 08:59:20 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 08:59:20 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 08:59:20 [INFO] - Finished Spring Data repository scanning in 38 ms. Found 3 JPA repository interfaces.
+2024-10-21 08:59:21 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 08:59:21 [INFO] - Starting service [Tomcat]
+2024-10-21 08:59:21 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 08:59:21 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 08:59:21 [INFO] - Root WebApplicationContext: initialization completed in 1105 ms
+2024-10-21 08:59:21 [INFO] - HikariPool-1 - Starting...
+2024-10-21 08:59:22 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 08:59:22 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 08:59:22 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 08:59:22 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 08:59:22 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 08:59:22 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 08:59:22 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 08:59:22 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 08:59:22 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 08:59:23 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 08:59:23 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 08:59:23 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 08:59:24 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 08:59:24 [INFO] - Started Main in 3.84 seconds (process running for 4.054)
+2024-10-21 09:22:35 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 09:22:35 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 09:22:35 [INFO] - Completed initialization in 1 ms
+2024-10-21 09:22:36 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 09:22:36 [INFO] - Количество фильмов в ответе =3
+2024-10-21 09:22:36 [INFO] - Ответ был отдан из кеша
+2024-10-21 09:22:36 [INFO] - Ответ был отдан из кеша
+2024-10-21 09:22:36 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 10:11:24 [INFO] - Starting Main using Java 21.0.1 with PID 7436 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 10:11:24 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 10:11:24 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 10:11:24 [INFO] - Finished Spring Data repository scanning in 39 ms. Found 3 JPA repository interfaces.
+2024-10-21 10:11:25 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 10:11:25 [INFO] - Starting service [Tomcat]
+2024-10-21 10:11:25 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 10:11:25 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 10:11:25 [INFO] - Root WebApplicationContext: initialization completed in 807 ms
+2024-10-21 10:11:25 [INFO] - HikariPool-1 - Starting...
+2024-10-21 10:11:25 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 10:11:25 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 10:11:25 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 10:11:25 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 10:11:25 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 10:11:25 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 10:11:25 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 10:11:25 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 10:11:25 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 10:11:26 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 10:11:26 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 10:11:26 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 10:11:27 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 10:11:27 [INFO] - Started Main in 2.857 seconds (process running for 3.079)
+2024-10-21 13:18:24 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 13:18:24 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 13:18:24 [INFO] - Completed initialization in 17 ms
+2024-10-21 13:18:24 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 13:18:24 [INFO] - был удалён как минимум один фильм с пустым именем
+2024-10-21 13:18:24 [INFO] - Количество фильмов в ответе =3
+2024-10-21 13:18:24 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 13:52:06 [INFO] - Starting Main using Java 21.0.1 with PID 24868 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 13:52:06 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 13:52:06 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 13:52:06 [INFO] - Finished Spring Data repository scanning in 42 ms. Found 3 JPA repository interfaces.
+2024-10-21 13:52:06 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 13:52:06 [INFO] - Starting service [Tomcat]
+2024-10-21 13:52:06 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 13:52:06 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 13:52:06 [INFO] - Root WebApplicationContext: initialization completed in 886 ms
+2024-10-21 13:52:06 [INFO] - HikariPool-1 - Starting...
+2024-10-21 13:52:07 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 13:52:07 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 13:52:07 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 13:52:07 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 13:52:07 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 13:52:07 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 13:52:07 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 13:52:07 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 13:52:07 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 13:52:08 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 13:52:08 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 13:52:08 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 13:52:08 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 13:52:08 [INFO] - Started Main in 3.033 seconds (process running for 3.276)
+2024-10-21 14:04:53 [INFO] - Starting Main using Java 21.0.1 with PID 28908 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 14:04:53 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 14:04:53 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 14:04:53 [INFO] - Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2024-10-21 14:04:53 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 14:04:53 [INFO] - Starting service [Tomcat]
+2024-10-21 14:04:53 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 14:04:53 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 14:04:53 [INFO] - Root WebApplicationContext: initialization completed in 776 ms
+2024-10-21 14:04:53 [INFO] - HikariPool-1 - Starting...
+2024-10-21 14:04:54 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 14:04:54 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 14:04:54 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 14:04:54 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 14:04:54 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 14:04:54 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 14:04:54 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 14:04:54 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 14:04:54 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 14:04:55 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 14:04:55 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 14:04:55 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 14:04:55 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 14:04:55 [INFO] - Started Main in 2.767 seconds (process running for 2.976)
+2024-10-21 14:26:45 [INFO] - Starting Main using Java 21.0.1 with PID 2408 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 14:26:45 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 14:26:45 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 14:26:45 [INFO] - Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+2024-10-21 14:26:45 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 14:26:45 [INFO] - Starting service [Tomcat]
+2024-10-21 14:26:45 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 14:26:46 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 14:26:46 [INFO] - Root WebApplicationContext: initialization completed in 799 ms
+2024-10-21 14:26:46 [INFO] - HikariPool-1 - Starting...
+2024-10-21 14:26:46 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 14:26:46 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 14:26:46 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 14:26:46 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 14:26:46 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 14:26:46 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 14:26:46 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 14:26:46 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 14:26:46 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 14:26:47 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 14:26:47 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 14:26:47 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 14:26:47 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 14:26:47 [INFO] - Started Main in 2.792 seconds (process running for 3.001)
+2024-10-21 14:27:05 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 14:27:05 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 14:27:05 [INFO] - Completed initialization in 1 ms
+2024-10-21 14:27:06 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 14:27:06 [INFO] - был удалён как минимум один фильм с пустым именем
+2024-10-21 14:27:06 [INFO] - Количество фильмов в ответе =3
+2024-10-21 14:27:06 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:27:08 [INFO] - Ответ был отдан из кеша
+2024-10-21 14:27:08 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:27:14 [INFO] - Ответ был отдан из кеша
+2024-10-21 14:27:14 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:27:26 [INFO] - Ответ был отдан из кеша
+2024-10-21 14:27:26 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:28:01 [WARN] - Был запрошен не существующий endpoint: /movies параметры: title=!! метод: POST
+2024-10-21 14:28:01 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:28:12 [WARN] - Был запрошен не существующий endpoint: /movies параметры: title=p%27 метод: POST
+2024-10-21 14:28:12 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:28:19 [WARN] - Был запрошен не существующий endpoint: /movies параметры: title=p метод: POST
+2024-10-21 14:28:19 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:28:37 [WARN] - Был запрошен не существующий endpoint: /movies/bolk параметры: null метод: POST
+2024-10-21 14:28:37 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:28:45 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 14:28:45 [INFO] - был удалён как минимум один фильм с пустым именем
+2024-10-21 14:28:45 [INFO] - По запросу ничего не нашлось
+2024-10-21 14:28:46 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 14:28:46 [INFO] - был удалён как минимум один фильм с пустым именем
+2024-10-21 14:28:46 [INFO] - Количество фильмов в ответе =1
+2024-10-21 14:28:46 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 14:28:46 [INFO] - был удалён как минимум один фильм с пустым именем
+2024-10-21 14:28:46 [INFO] - По запросу ничего не нашлось
+2024-10-21 14:28:46 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 14:28:46 [INFO] - был удалён как минимум один фильм с пустым именем
+2024-10-21 14:28:46 [INFO] - Количество фильмов в ответе =1
+2024-10-21 14:28:46 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:33:31 [INFO] - Starting Main using Java 21.0.1 with PID 10676 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 14:33:31 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 14:33:31 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 14:33:31 [INFO] - Finished Spring Data repository scanning in 38 ms. Found 3 JPA repository interfaces.
+2024-10-21 14:33:32 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 14:33:32 [INFO] - Starting service [Tomcat]
+2024-10-21 14:33:32 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 14:33:32 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 14:33:32 [INFO] - Root WebApplicationContext: initialization completed in 832 ms
+2024-10-21 14:33:32 [INFO] - HikariPool-1 - Starting...
+2024-10-21 14:33:32 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 14:33:32 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 14:33:32 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 14:33:32 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 14:33:32 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 14:33:32 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 14:33:32 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 14:33:32 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 14:33:32 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 14:33:33 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 14:33:33 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 14:33:33 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 14:33:34 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 14:33:34 [INFO] - Started Main in 2.962 seconds (process running for 3.18)
+2024-10-21 14:33:57 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 14:33:57 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 14:33:57 [INFO] - Completed initialization in 1 ms
+2024-10-21 14:33:58 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 14:33:58 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=1140817, name=, releaseYear=2018, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=короткометражка), Genre(id=null, name=драма)], countries=[Country(id=null, name=Испания)])
+2024-10-21 14:33:58 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=1295551, name=, releaseYear=2019, description=, typeNumber=5, creationRecord=null, genres=[Genre(id=null, name=мультфильм), Genre(id=null, name=фэнтези), Genre(id=null, name=боевик)], countries=[Country(id=null, name=Япония)])
+2024-10-21 14:33:58 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=4293326, name=, releaseYear=2012, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=короткометражка), Genre(id=null, name=музыка)], countries=[Country(id=null, name=США)])
+2024-10-21 14:33:58 [INFO] - По запросу ничего не нашлось
+2024-10-21 14:33:59 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 14:33:59 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=96713, name=, releaseYear=1953, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=мелодрама)], countries=[Country(id=null, name=Индия)])
+2024-10-21 14:33:59 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=240192, name=, releaseYear=1961, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=драма), Genre(id=null, name=семейный)], countries=[Country(id=null, name=Индия)])
+2024-10-21 14:33:59 [INFO] - Количество фильмов в ответе =1
+2024-10-21 14:34:00 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 14:34:00 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=807777, name=, releaseYear=2017, description=Антология ужасов с гендерным уклоном - все сегменты сборника сняты женщинами-режиссёрами., typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=ужасы)], countries=[Country(id=null, name=Канада), Country(id=null, name=США), Country(id=null, name=Мексика)])
+2024-10-21 14:34:00 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=1081252, name=, releaseYear=2016, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=короткометражка), Genre(id=null, name=фантастика)], countries=[Country(id=null, name=США)])
+2024-10-21 14:34:00 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=410911, name=, releaseYear=2006, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=короткометражка), Genre(id=null, name=комедия)], countries=[Country(id=null, name=Чили)])
+2024-10-21 14:34:00 [INFO] - По запросу ничего не нашлось
+2024-10-21 14:34:00 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 14:34:00 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=557647, name=, releaseYear=2011, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=короткометражка), Genre(id=null, name=драма)], countries=[Country(id=null, name=США)])
+2024-10-21 14:34:00 [INFO] - Количество фильмов в ответе =1
+2024-10-21 14:34:00 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:35:21 [INFO] - Ответ был отдан из кеша
+2024-10-21 14:35:21 [INFO] - Ответ был отдан из кеша
+2024-10-21 14:35:21 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:35:26 [INFO] - Ответ был отдан из кеша
+2024-10-21 14:35:26 [INFO] - Ответ был отдан из кеша
+2024-10-21 14:35:26 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:35:33 [INFO] - Ответ был отдан из кеша
+2024-10-21 14:35:33 [INFO] - Ответ был отдан из кеша
+2024-10-21 14:35:33 [INFO] - Ответ был отдан из кеша
+2024-10-21 14:35:33 [INFO] - Ответ был отдан из кеша
+2024-10-21 14:35:33 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:35:45 [INFO] - Starting Main using Java 21.0.1 with PID 3892 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 14:35:45 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 14:35:45 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 14:35:45 [INFO] - Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+2024-10-21 14:35:45 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 14:35:46 [INFO] - Starting service [Tomcat]
+2024-10-21 14:35:46 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 14:35:46 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 14:35:46 [INFO] - Root WebApplicationContext: initialization completed in 778 ms
+2024-10-21 14:35:46 [INFO] - HikariPool-1 - Starting...
+2024-10-21 14:35:46 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 14:35:46 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 14:35:46 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 14:35:46 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 14:35:46 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 14:35:46 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 14:35:46 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 14:35:46 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 14:35:46 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 14:35:47 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 14:35:47 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 14:35:47 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 14:35:47 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 14:35:47 [INFO] - Started Main in 2.776 seconds (process running for 2.987)
+2024-10-21 14:35:51 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 14:35:51 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 14:35:51 [INFO] - Completed initialization in 0 ms
+2024-10-21 14:35:51 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 14:35:51 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=1140817, name=, releaseYear=2018, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=короткометражка), Genre(id=null, name=драма)], countries=[Country(id=null, name=Испания)])
+2024-10-21 14:35:51 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=1295551, name=, releaseYear=2019, description=, typeNumber=5, creationRecord=null, genres=[Genre(id=null, name=мультфильм), Genre(id=null, name=фэнтези), Genre(id=null, name=боевик)], countries=[Country(id=null, name=Япония)])
+2024-10-21 14:35:51 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=4293326, name=, releaseYear=2012, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=короткометражка), Genre(id=null, name=музыка)], countries=[Country(id=null, name=США)])
+2024-10-21 14:35:51 [INFO] - По запросу ничего не нашлось
+2024-10-21 14:35:52 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 14:35:52 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=96713, name=, releaseYear=1953, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=мелодрама)], countries=[Country(id=null, name=Индия)])
+2024-10-21 14:35:52 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=240192, name=, releaseYear=1961, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=драма), Genre(id=null, name=семейный)], countries=[Country(id=null, name=Индия)])
+2024-10-21 14:35:52 [INFO] - Количество фильмов в ответе =1
+2024-10-21 14:35:52 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:36:22 [INFO] - Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in the request target [/movies?title=sd]&limit=5 ]. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:482)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:257)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-21 14:36:27 [INFO] - Ответ был отдан из кеша
+2024-10-21 14:36:27 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:36:41 [INFO] - Starting Main using Java 21.0.1 with PID 25360 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 14:36:41 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 14:36:41 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 14:36:41 [INFO] - Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+2024-10-21 14:36:42 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 14:36:42 [INFO] - Starting service [Tomcat]
+2024-10-21 14:36:42 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 14:36:42 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 14:36:42 [INFO] - Root WebApplicationContext: initialization completed in 774 ms
+2024-10-21 14:36:42 [INFO] - HikariPool-1 - Starting...
+2024-10-21 14:36:42 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 14:36:42 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 14:36:42 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 14:36:42 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 14:36:42 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 14:36:42 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 14:36:42 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 14:36:42 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 14:36:42 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 14:36:43 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 14:36:43 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 14:36:43 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 14:36:43 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 14:36:43 [INFO] - Started Main in 2.777 seconds (process running for 2.998)
+2024-10-21 14:36:43 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 14:36:43 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 14:36:43 [INFO] - Completed initialization in 1 ms
+2024-10-21 14:36:45 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 14:36:45 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=1140817, name=, releaseYear=2018, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=короткометражка), Genre(id=null, name=драма)], countries=[Country(id=null, name=Испания)])
+2024-10-21 14:36:45 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=1295551, name=, releaseYear=2019, description=, typeNumber=5, creationRecord=null, genres=[Genre(id=null, name=мультфильм), Genre(id=null, name=фэнтези), Genre(id=null, name=боевик)], countries=[Country(id=null, name=Япония)])
+2024-10-21 14:36:45 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=4293326, name=, releaseYear=2012, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=короткометражка), Genre(id=null, name=музыка)], countries=[Country(id=null, name=США)])
+2024-10-21 14:36:45 [INFO] - Количество фильмов в ответе =2
+2024-10-21 14:36:45 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:37:12 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 14:37:12 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=96713, name=, releaseYear=1953, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=мелодрама)], countries=[Country(id=null, name=Индия)])
+2024-10-21 14:37:12 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=240192, name=, releaseYear=1961, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=драма), Genre(id=null, name=семейный)], countries=[Country(id=null, name=Индия)])
+2024-10-21 14:37:12 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=1402715, name=, releaseYear=2017, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=драма)], countries=[])
+2024-10-21 14:37:12 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=4922761, name=, releaseYear=2018, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=короткометражка), Genre(id=null, name=драма)], countries=[Country(id=null, name=Индия)])
+2024-10-21 14:37:12 [INFO] - Количество фильмов в ответе =1
+2024-10-21 14:37:12 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:37:51 [INFO] - Ответ был отдан из кеша
+2024-10-21 14:37:51 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:40:57 [INFO] - Starting Main using Java 21.0.1 with PID 9572 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 14:40:57 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 14:40:57 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 14:40:57 [INFO] - Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2024-10-21 14:40:58 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 14:40:58 [INFO] - Starting service [Tomcat]
+2024-10-21 14:40:58 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 14:40:58 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 14:40:58 [INFO] - Root WebApplicationContext: initialization completed in 815 ms
+2024-10-21 14:40:58 [INFO] - HikariPool-1 - Starting...
+2024-10-21 14:40:58 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 14:40:58 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 14:40:58 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 14:40:58 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 14:40:58 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 14:40:58 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 14:40:58 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 14:40:58 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 14:40:58 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 14:40:59 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 14:40:59 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 14:40:59 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 14:41:00 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 14:41:00 [INFO] - Started Main in 2.804 seconds (process running for 3.012)
+2024-10-21 14:42:59 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 14:42:59 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 14:42:59 [INFO] - Completed initialization in 1 ms
+2024-10-21 14:42:59 [INFO] - Пришёл запрос: /movies/bulk
+2024-10-21 14:43:01 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 14:43:01 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=1140817, name=, releaseYear=2018, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=короткометражка), Genre(id=null, name=драма)], countries=[Country(id=null, name=Испания)])
+2024-10-21 14:43:01 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=1295551, name=, releaseYear=2019, description=, typeNumber=5, creationRecord=null, genres=[Genre(id=null, name=мультфильм), Genre(id=null, name=фэнтези), Genre(id=null, name=боевик)], countries=[Country(id=null, name=Япония)])
+2024-10-21 14:43:01 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=4293326, name=, releaseYear=2012, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=короткометражка), Genre(id=null, name=музыка)], countries=[Country(id=null, name=США)])
+2024-10-21 14:43:01 [INFO] - По запросу ничего не нашлось
+2024-10-21 14:43:01 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 14:43:01 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=96713, name=, releaseYear=1953, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=мелодрама)], countries=[Country(id=null, name=Индия)])
+2024-10-21 14:43:01 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=240192, name=, releaseYear=1961, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=драма), Genre(id=null, name=семейный)], countries=[Country(id=null, name=Индия)])
+2024-10-21 14:43:01 [INFO] - Количество фильмов в ответе =1
+2024-10-21 14:43:01 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:43:43 [INFO] - Starting Main using Java 21.0.1 with PID 23156 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 14:43:43 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 14:43:43 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 14:43:43 [INFO] - Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+2024-10-21 14:43:44 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 14:43:44 [INFO] - Starting service [Tomcat]
+2024-10-21 14:43:44 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 14:43:44 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 14:43:44 [INFO] - Root WebApplicationContext: initialization completed in 778 ms
+2024-10-21 14:43:44 [INFO] - HikariPool-1 - Starting...
+2024-10-21 14:43:44 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 14:43:44 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 14:43:44 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 14:43:44 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 14:43:44 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 14:43:44 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 14:43:44 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 14:43:44 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 14:43:44 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 14:43:45 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 14:43:45 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 14:43:45 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 14:43:45 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 14:43:45 [INFO] - Started Main in 2.815 seconds (process running for 3.027)
+2024-10-21 14:44:17 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 14:44:17 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 14:44:17 [INFO] - Completed initialization in 1 ms
+2024-10-21 14:44:17 [INFO] - Пришёл запрос: /movies/bulk
+2024-10-21 14:44:18 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 14:44:18 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=1140817, name=, releaseYear=2018, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=короткометражка), Genre(id=null, name=драма)], countries=[Country(id=null, name=Испания)])
+2024-10-21 14:44:18 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=1295551, name=, releaseYear=2019, description=, typeNumber=5, creationRecord=null, genres=[Genre(id=null, name=мультфильм), Genre(id=null, name=фэнтези), Genre(id=null, name=боевик)], countries=[Country(id=null, name=Япония)])
+2024-10-21 14:44:18 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=4293326, name=, releaseYear=2012, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=короткометражка), Genre(id=null, name=музыка)], countries=[Country(id=null, name=США)])
+2024-10-21 14:44:18 [INFO] - По запросу ничего не нашлось
+2024-10-21 14:44:18 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 14:44:18 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=96713, name=, releaseYear=1953, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=мелодрама)], countries=[Country(id=null, name=Индия)])
+2024-10-21 14:44:18 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=240192, name=, releaseYear=1961, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=драма), Genre(id=null, name=семейный)], countries=[Country(id=null, name=Индия)])
+2024-10-21 14:44:18 [INFO] - Количество фильмов в ответе =1
+2024-10-21 14:44:18 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:45:21 [INFO] - Пришёл запрос: /movies
+2024-10-21 14:45:21 [INFO] - Ответ был отдан из кеша
+2024-10-21 14:45:21 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:45:27 [INFO] - Пришёл запрос: /movies
+2024-10-21 14:45:27 [INFO] - Ответ был отдан из кеша
+2024-10-21 14:45:27 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:45:45 [INFO] - Пришёл запрос: /movies/bulk
+2024-10-21 14:45:45 [INFO] - Ответ был отдан из кеша
+2024-10-21 14:45:45 [INFO] - Ответ был отдан из кеша
+2024-10-21 14:45:45 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 14:56:08 [INFO] - Starting Main using Java 21.0.1 with PID 11540 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 14:56:08 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 14:56:08 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 14:56:08 [INFO] - Finished Spring Data repository scanning in 39 ms. Found 3 JPA repository interfaces.
+2024-10-21 14:56:08 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 14:56:08 [INFO] - Starting service [Tomcat]
+2024-10-21 14:56:08 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 14:56:08 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 14:56:08 [INFO] - Root WebApplicationContext: initialization completed in 789 ms
+2024-10-21 14:56:08 [INFO] - HikariPool-1 - Starting...
+2024-10-21 14:56:09 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 14:56:09 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 14:56:09 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 14:56:09 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 14:56:09 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 14:56:09 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 14:56:09 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 14:56:09 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 14:56:09 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 14:56:10 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 14:56:10 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 14:56:10 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 14:56:10 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 14:56:10 [INFO] - Started Main in 2.773 seconds (process running for 2.985)
+2024-10-21 15:02:13 [INFO] - Starting Main using Java 21.0.1 with PID 30228 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 15:02:13 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 15:02:13 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 15:02:13 [INFO] - Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+2024-10-21 15:02:13 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 15:02:13 [INFO] - Starting service [Tomcat]
+2024-10-21 15:02:13 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 15:02:13 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 15:02:13 [INFO] - Root WebApplicationContext: initialization completed in 784 ms
+2024-10-21 15:02:13 [INFO] - HikariPool-1 - Starting...
+2024-10-21 15:02:14 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 15:02:14 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 15:02:14 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 15:02:14 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 15:02:14 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 15:02:14 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 15:02:14 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 15:02:14 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 15:02:14 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 15:02:15 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 15:02:15 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 15:02:15 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 15:02:15 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 15:02:15 [INFO] - Started Main in 2.765 seconds (process running for 2.977)
+2024-10-21 15:02:37 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 15:02:37 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 15:02:37 [INFO] - Completed initialization in 1 ms
+2024-10-21 15:02:37 [INFO] - ------------------- Endpoint: /movies/bulk метод: POST---------------------------
+2024-10-21 15:02:38 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 15:02:38 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=1140817, name=, releaseYear=2018, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=короткометражка), Genre(id=null, name=драма)], countries=[Country(id=null, name=Испания)])
+2024-10-21 15:02:38 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=1295551, name=, releaseYear=2019, description=, typeNumber=5, creationRecord=null, genres=[Genre(id=null, name=мультфильм), Genre(id=null, name=фэнтези), Genre(id=null, name=боевик)], countries=[Country(id=null, name=Япония)])
+2024-10-21 15:02:38 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=4293326, name=, releaseYear=2012, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=короткометражка), Genre(id=null, name=музыка)], countries=[Country(id=null, name=США)])
+2024-10-21 15:02:38 [INFO] - По запросу ничего не нашлось
+2024-10-21 15:02:38 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 15:02:38 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=96713, name=, releaseYear=1953, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=мелодрама)], countries=[Country(id=null, name=Индия)])
+2024-10-21 15:02:38 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=240192, name=, releaseYear=1961, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=драма), Genre(id=null, name=семейный)], countries=[Country(id=null, name=Индия)])
+2024-10-21 15:02:38 [INFO] - Количество фильмов в ответе =1
+2024-10-21 15:02:38 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 15:05:20 [INFO] - ------------------- Endpoint: /movies/bulk метод: POST---------------------------
+2024-10-21 15:05:20 [INFO] - Ответ был отдан из кеша
+2024-10-21 15:05:20 [INFO] - Ответ был отдан из кеша
+2024-10-21 15:05:20 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 15:13:13 [INFO] - Starting Main using Java 21.0.1 with PID 20656 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 15:13:13 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 15:13:14 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 15:13:14 [INFO] - Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2024-10-21 15:13:14 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 15:13:14 [INFO] - Starting service [Tomcat]
+2024-10-21 15:13:14 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 15:13:14 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 15:13:14 [INFO] - Root WebApplicationContext: initialization completed in 775 ms
+2024-10-21 15:13:14 [INFO] - HikariPool-1 - Starting...
+2024-10-21 15:13:14 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 15:13:14 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 15:13:14 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 15:13:14 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 15:13:14 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 15:13:14 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 15:13:15 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 15:13:15 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 15:13:15 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 15:13:15 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 15:13:15 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 15:13:16 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 15:13:16 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 15:13:16 [INFO] - Started Main in 2.784 seconds (process running for 2.999)
+2024-10-21 15:13:34 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 15:13:34 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 15:13:34 [INFO] - Completed initialization in 1 ms
+2024-10-21 15:13:34 [INFO] - ------------------- Endpoint: /movies метод: GET---------------------------
+2024-10-21 15:13:34 [INFO] - Parameter: title = [aas]
+2024-10-21 15:13:34 [INFO] - Parameter: limit = [5]
+2024-10-21 15:13:35 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 15:13:35 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=96713, name=, releaseYear=1953, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=мелодрама)], countries=[Country(id=null, name=Индия)])
+2024-10-21 15:13:35 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=240192, name=, releaseYear=1961, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=драма), Genre(id=null, name=семейный)], countries=[Country(id=null, name=Индия)])
+2024-10-21 15:13:35 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=1402715, name=, releaseYear=2017, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=драма)], countries=[])
+2024-10-21 15:13:35 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=4922761, name=, releaseYear=2018, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=короткометражка), Genre(id=null, name=драма)], countries=[Country(id=null, name=Индия)])
+2024-10-21 15:13:35 [INFO] - Количество фильмов в ответе =1
+2024-10-21 15:13:35 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 15:13:43 [INFO] - ------------------- Endpoint: /movies метод: GET---------------------------
+2024-10-21 15:13:43 [INFO] - Parameter: title = [a]
+2024-10-21 15:13:43 [INFO] - Parameter: limit = [5]
+2024-10-21 15:13:43 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 15:13:43 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=407896, name=, releaseYear=2002, description=, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=документальный)], countries=[Country(id=null, name=Великобритания)])
+2024-10-21 15:13:43 [INFO] - был удалён фильм с пустым именем: Movie(localId=0, kinoPoiskId=301798, name=, releaseYear=2006, description=Япония, безусловно, страна, пережившая множество трагедий. От Великого землетрясения в Канто в 1923 году до бомбардировок войсками союзников во время Второй Мировой Войны, закончившихся атомными взрывами в Хиросиме и Нагасаки. Но зориновые атаки, предпринятые членами секты «Аум Синрике» в токийском метро 20 марта 1995 года, совершенно по-новому травмировали японский народ. Это не было обезличенное стихийное бедствие или действия иностранного агрессора. В этом случае одни японцы распыляли ядовитый газ, чтобы убить других японцев, идея, которая никак не сочеталась с концепцией послевоенного мира в Японии. Кто они были, эти последователи «Аум Синрике»? Почему они напали на своих невинных сограждан?, typeNumber=1, creationRecord=null, genres=[Genre(id=null, name=комедия)], countries=[Country(id=null, name=США)])
+2024-10-21 15:13:43 [INFO] - Количество фильмов в ответе =3
+2024-10-21 15:13:43 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 15:16:57 [INFO] - Starting Main using Java 21.0.1 with PID 30772 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 15:16:57 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 15:16:57 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 15:16:57 [INFO] - Finished Spring Data repository scanning in 38 ms. Found 3 JPA repository interfaces.
+2024-10-21 15:16:57 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 15:16:57 [INFO] - Starting service [Tomcat]
+2024-10-21 15:16:57 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 15:16:57 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 15:16:57 [INFO] - Root WebApplicationContext: initialization completed in 818 ms
+2024-10-21 15:16:57 [INFO] - HikariPool-1 - Starting...
+2024-10-21 15:16:58 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 15:16:58 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 15:16:58 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 15:16:58 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 15:16:58 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 15:16:58 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 15:16:58 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 15:16:58 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 15:16:58 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 15:16:59 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 15:16:59 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 15:16:59 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 15:16:59 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 15:16:59 [INFO] - Started Main in 2.889 seconds (process running for 3.121)
+2024-10-21 15:17:01 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 15:17:01 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 15:17:01 [INFO] - Completed initialization in 1 ms
+2024-10-21 15:17:01 [INFO] - ------------------- Endpoint: /movies метод: GET---------------------------
+2024-10-21 15:17:01 [INFO] - Parameter: title = [a]
+2024-10-21 15:17:01 [INFO] - Parameter: limit = [5]
+2024-10-21 15:17:02 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 15:17:02 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 407896
+2024-10-21 15:17:02 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 301798
+2024-10-21 15:17:02 [INFO] - Количество фильмов в ответе =3
+2024-10-21 15:17:02 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 15:18:21 [INFO] - Starting Main using Java 21.0.1 with PID 25204 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 15:18:21 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 15:18:21 [WARN] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [D:\OneDrive\java\lab\target\classes\by\Danik\lab\models\ResponseDataFromApi.class]
+2024-10-21 15:18:22 [ERROR] - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [D:\OneDrive\java\lab\target\classes\by\Danik\lab\models\ResponseDataFromApi.class]
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:510)
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:351)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:277)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:306)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:246)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:197)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:165)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:417)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:789)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:607)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at by.Danik.lab.Main.main(Main.java:9)
+Caused by: java.nio.file.FileSystemException: D:\OneDrive\java\lab\target\classes\by\Danik\lab\models\ResponseDataFromApi.class: Процесс не может получить доступ к файлу, так как этот файл занят другим процессом
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:234)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:379)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:431)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:420)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:159)
+	at org.springframework.core.io.FileSystemResource.getInputStream(FileSystemResource.java:193)
+	at org.springframework.core.type.classreading.SimpleMetadataReader.getClassReader(SimpleMetadataReader.java:54)
+	at org.springframework.core.type.classreading.SimpleMetadataReader.<init>(SimpleMetadataReader.java:48)
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:103)
+	at org.springframework.core.type.classreading.CachingMetadataReaderFactory.getMetadataReader(CachingMetadataReaderFactory.java:122)
+	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.scanCandidateComponents(ClassPathScanningCandidateComponentProvider.java:470)
+	... 20 common frames omitted
+2024-10-21 15:18:41 [INFO] - Starting Main using Java 21.0.1 with PID 27408 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 15:18:41 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 15:18:42 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 15:18:42 [INFO] - Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+2024-10-21 15:18:42 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 15:18:42 [INFO] - Starting service [Tomcat]
+2024-10-21 15:18:42 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 15:18:42 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 15:18:42 [INFO] - Root WebApplicationContext: initialization completed in 776 ms
+2024-10-21 15:18:42 [INFO] - HikariPool-1 - Starting...
+2024-10-21 15:18:42 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 15:18:42 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 15:18:42 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 15:18:42 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 15:18:43 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 15:18:43 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 15:18:43 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 15:18:43 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 15:18:43 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 15:18:43 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 15:18:43 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 15:18:44 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 15:18:44 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 15:18:44 [INFO] - Started Main in 2.817 seconds (process running for 3.032)
+2024-10-21 15:18:47 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 15:18:47 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 15:18:47 [INFO] - Completed initialization in 0 ms
+2024-10-21 15:18:47 [INFO] - ------------------- Endpoint: /movies метод: GET---------------------------
+2024-10-21 15:18:47 [INFO] - Параметры : org.apache.catalina.util.ParameterMap@36ddedb2
+2024-10-21 15:18:47 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 15:18:47 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 407896
+2024-10-21 15:18:47 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 301798
+2024-10-21 15:18:47 [INFO] - Количество фильмов в ответе =3
+2024-10-21 15:18:47 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 15:22:37 [INFO] - Starting Main using Java 21.0.1 with PID 23596 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 15:22:37 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 15:22:38 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 15:22:38 [INFO] - Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2024-10-21 15:22:38 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 15:22:38 [INFO] - Starting service [Tomcat]
+2024-10-21 15:22:38 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 15:22:38 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 15:22:38 [INFO] - Root WebApplicationContext: initialization completed in 794 ms
+2024-10-21 15:22:38 [INFO] - HikariPool-1 - Starting...
+2024-10-21 15:22:38 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 15:22:38 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 15:22:38 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 15:22:38 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 15:22:38 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 15:22:38 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 15:22:39 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 15:22:39 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 15:22:39 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 15:22:39 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 15:22:39 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 15:22:40 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 15:22:40 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 15:22:40 [INFO] - Started Main in 2.783 seconds (process running for 3.069)
+2024-10-21 15:22:42 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 15:22:42 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 15:22:42 [INFO] - Completed initialization in 2 ms
+2024-10-21 15:22:42 [INFO] - ------------------- Endpoint: /movies/bulk метод: POST---------------------------
+2024-10-21 15:22:42 [INFO] - Параметры: 
+2024-10-21 15:22:42 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 15:22:43 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 1140817
+2024-10-21 15:22:43 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 1295551
+2024-10-21 15:22:43 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 4293326
+2024-10-21 15:22:43 [INFO] - По запросу ничего не нашлось
+2024-10-21 15:22:43 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 15:22:43 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 96713
+2024-10-21 15:22:43 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 240192
+2024-10-21 15:22:43 [INFO] - Количество фильмов в ответе =1
+2024-10-21 15:22:43 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 15:23:30 [INFO] - Starting Main using Java 21.0.1 with PID 13940 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 15:23:30 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 15:23:30 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 15:23:30 [INFO] - Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+2024-10-21 15:23:30 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 15:23:30 [INFO] - Starting service [Tomcat]
+2024-10-21 15:23:30 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 15:23:30 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 15:23:30 [INFO] - Root WebApplicationContext: initialization completed in 828 ms
+2024-10-21 15:23:31 [INFO] - HikariPool-1 - Starting...
+2024-10-21 15:23:31 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 15:23:31 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 15:23:31 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 15:23:31 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 15:23:31 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 15:23:31 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 15:23:31 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 15:23:31 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 15:23:31 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 15:23:32 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 15:23:32 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 15:23:32 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 15:23:32 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 15:23:32 [INFO] - Started Main in 2.812 seconds (process running for 3.021)
+2024-10-21 15:23:34 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 15:23:34 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 15:23:34 [INFO] - Completed initialization in 0 ms
+2024-10-21 15:23:34 [INFO] - ------------------- Endpoint: /movies/bulk метод: POST---------------------------
+2024-10-21 15:23:34 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 15:23:34 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 1140817
+2024-10-21 15:23:34 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 1295551
+2024-10-21 15:23:34 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 4293326
+2024-10-21 15:23:34 [INFO] - По запросу ничего не нашлось
+2024-10-21 15:23:35 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 15:23:35 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 96713
+2024-10-21 15:23:35 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 240192
+2024-10-21 15:23:35 [INFO] - Количество фильмов в ответе =1
+2024-10-21 15:23:35 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 15:23:42 [INFO] - ------------------- Endpoint: /movies/bulk метод: POST---------------------------
+2024-10-21 15:23:42 [INFO] - Ответ был отдан из кеша
+2024-10-21 15:23:42 [INFO] - Ответ был отдан из кеша
+2024-10-21 15:23:42 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 15:23:54 [INFO] - ------------------- Endpoint: /movies метод: GET---------------------------
+2024-10-21 15:23:54 [INFO] - Параметры: title = [a]
+2024-10-21 15:23:54 [INFO] - Параметры: limit = [5]
+2024-10-21 15:23:55 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 15:23:55 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 407896
+2024-10-21 15:23:55 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 301798
+2024-10-21 15:23:55 [INFO] - Количество фильмов в ответе =3
+2024-10-21 15:23:55 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 15:24:35 [INFO] - Starting Main using Java 21.0.1 with PID 26744 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 15:24:35 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 15:24:35 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 15:24:35 [INFO] - Finished Spring Data repository scanning in 39 ms. Found 3 JPA repository interfaces.
+2024-10-21 15:24:35 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 15:24:35 [INFO] - Starting service [Tomcat]
+2024-10-21 15:24:35 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 15:24:35 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 15:24:35 [INFO] - Root WebApplicationContext: initialization completed in 823 ms
+2024-10-21 15:24:35 [INFO] - HikariPool-1 - Starting...
+2024-10-21 15:24:36 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 15:24:36 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 15:24:36 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 15:24:36 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 15:24:36 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 15:24:36 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 15:24:36 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 15:24:36 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 15:24:36 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 15:24:37 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 15:24:37 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 15:24:37 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 15:24:37 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 15:24:37 [INFO] - Started Main in 2.892 seconds (process running for 3.109)
+2024-10-21 15:24:37 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 15:24:37 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 15:24:37 [INFO] - Completed initialization in 1 ms
+2024-10-21 15:24:37 [INFO] - ------------------- Endpoint: /movies метод: GET---------------------------
+2024-10-21 15:24:37 [INFO] - Параметры: Параметр: title = [a]; Параметр: limit = [5]; 
+2024-10-21 15:24:38 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 15:24:38 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 407896
+2024-10-21 15:24:38 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 301798
+2024-10-21 15:24:38 [INFO] - Количество фильмов в ответе =3
+2024-10-21 15:24:38 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 15:29:58 [INFO] - Starting Main using Java 21.0.1 with PID 6804 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 15:29:58 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 15:29:58 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 15:29:58 [INFO] - Finished Spring Data repository scanning in 38 ms. Found 3 JPA repository interfaces.
+2024-10-21 15:29:59 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 15:29:59 [INFO] - Starting service [Tomcat]
+2024-10-21 15:29:59 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 15:29:59 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 15:29:59 [INFO] - Root WebApplicationContext: initialization completed in 781 ms
+2024-10-21 15:29:59 [INFO] - HikariPool-1 - Starting...
+2024-10-21 15:29:59 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 15:29:59 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 15:29:59 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 15:29:59 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 15:29:59 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 15:29:59 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 15:29:59 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 15:29:59 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 15:29:59 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 15:30:00 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 15:30:00 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 15:30:00 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 15:30:01 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 15:30:01 [INFO] - Started Main in 2.842 seconds (process running for 3.058)
+2024-10-21 15:30:12 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 15:30:13 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 15:30:13 [INFO] - Completed initialization in 1 ms
+2024-10-21 15:30:13 [INFO] - ------------------- Endpoint: /movies метод: GET---------------------------
+2024-10-21 15:30:13 [INFO] - Параметры: title = [a]; limit = [5]; 
+2024-10-21 15:30:13 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 15:30:13 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 407896
+2024-10-21 15:30:13 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 301798
+2024-10-21 15:30:13 [INFO] - Количество фильмов в ответе =3
+2024-10-21 15:30:13 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 15:30:19 [INFO] - ------------------- Endpoint: /movies/bulk метод: POST---------------------------
+2024-10-21 15:30:19 [INFO] - Тело запроса: ["sd", "aas"]
+2024-10-21 15:30:19 [ERROR] - ВНИМАНИЕ: не перехваченное исключение: имя класса class java.lang.IllegalStateException Причина = getReader() has already been called for this request
+2024-10-21 15:30:19 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 15:32:47 [INFO] - Starting Main using Java 21.0.1 with PID 19072 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 15:32:47 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 15:32:47 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 15:32:47 [INFO] - Finished Spring Data repository scanning in 38 ms. Found 3 JPA repository interfaces.
+2024-10-21 15:32:48 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 15:32:48 [INFO] - Starting service [Tomcat]
+2024-10-21 15:32:48 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 15:32:48 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 15:32:48 [INFO] - Root WebApplicationContext: initialization completed in 792 ms
+2024-10-21 15:32:48 [INFO] - HikariPool-1 - Starting...
+2024-10-21 15:32:48 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 15:32:48 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 15:32:48 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 15:32:48 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 15:32:48 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 15:32:48 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 15:32:48 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 15:32:48 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 15:32:48 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 15:32:49 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 15:32:49 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 15:32:49 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 15:32:50 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 15:32:50 [INFO] - Started Main in 2.799 seconds (process running for 3.014)
+2024-10-21 15:33:09 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 15:33:09 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 15:33:09 [INFO] - Completed initialization in 0 ms
+2024-10-21 15:33:09 [INFO] - ------------------- Endpoint: /movies метод: GET---------------------------
+2024-10-21 15:33:09 [INFO] - Параметры: title = [a]; limit = [5]; 
+2024-10-21 15:33:09 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 15:33:09 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 407896
+2024-10-21 15:33:09 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 301798
+2024-10-21 15:33:09 [INFO] - Количество фильмов в ответе =3
+2024-10-21 15:33:09 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 15:33:15 [INFO] - ------------------- Endpoint: /movies/bulk метод: POST---------------------------
+2024-10-21 15:33:15 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 15:33:15 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 1140817
+2024-10-21 15:33:15 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 1295551
+2024-10-21 15:33:15 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 4293326
+2024-10-21 15:33:15 [INFO] - По запросу ничего не нашлось
+2024-10-21 15:33:15 [INFO] - был выполнен запрос к API кинопоиска
+2024-10-21 15:33:15 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 96713
+2024-10-21 15:33:15 [INFO] - был удалён фильм с пустым именем, id в базе кинопоиска: 240192
+2024-10-21 15:33:15 [INFO] - Количество фильмов в ответе =1
+2024-10-21 15:33:15 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 15:33:20 [INFO] - ------------------- Endpoint: /movies/bulk метод: POST---------------------------
+2024-10-21 15:33:20 [ERROR] - POST запрос без тела
+2024-10-21 15:33:20 [ERROR] - ВНИМАНИЕ: не перехваченное исключение: имя класса class org.springframework.http.converter.HttpMessageNotReadableException Причина = Required request body is missing: public org.springframework.http.ResponseEntity<java.util.List<java.util.List<by.Danik.lab.models.movie.entities.Movie>>> by.Danik.lab.controllers.MovieController.getMoviesBulk(java.util.List<java.lang.String>)
+2024-10-21 15:33:20 [INFO] - --------------------Запрос закончился------------------------
+2024-10-21 15:33:58 [INFO] - Starting Main using Java 21.0.1 with PID 21160 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 15:33:58 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 15:33:58 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 15:33:58 [INFO] - Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+2024-10-21 15:33:58 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 15:33:59 [INFO] - Starting service [Tomcat]
+2024-10-21 15:33:59 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 15:33:59 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 15:33:59 [INFO] - Root WebApplicationContext: initialization completed in 800 ms
+2024-10-21 15:33:59 [INFO] - HikariPool-1 - Starting...
+2024-10-21 15:33:59 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 15:33:59 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 15:33:59 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 15:33:59 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 15:33:59 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 15:33:59 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 15:33:59 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 15:33:59 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 15:33:59 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 15:34:00 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 15:34:00 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 15:34:00 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 15:34:00 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 15:34:00 [INFO] - Started Main in 2.81 seconds (process running for 3.025)
+2024-10-21 15:34:04 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 15:34:04 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 15:34:04 [INFO] - Completed initialization in 1 ms
+2024-10-21 15:34:04 [INFO] - ------------------- Endpoint: /movies/bulk метод: POST---------------------------
+2024-10-21 15:34:04 [ERROR] - POST запрос без тела
+2024-10-21 15:34:11 [INFO] - ------------------- Endpoint: /movies/bulk метод: POST---------------------------
+2024-10-21 15:34:11 [ERROR] - POST запрос без тела
+2024-10-21 15:36:01 [INFO] - Starting Main using Java 21.0.1 with PID 10204 (D:\OneDrive\java\lab\target\classes started by migulin in D:\OneDrive\java\lab)
+2024-10-21 15:36:01 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2024-10-21 15:36:01 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21 15:36:01 [INFO] - Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+2024-10-21 15:36:02 [INFO] - Tomcat initialized with port 8080 (http)
+2024-10-21 15:36:02 [INFO] - Starting service [Tomcat]
+2024-10-21 15:36:02 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21 15:36:02 [INFO] - Initializing Spring embedded WebApplicationContext
+2024-10-21 15:36:02 [INFO] - Root WebApplicationContext: initialization completed in 773 ms
+2024-10-21 15:36:02 [INFO] - HikariPool-1 - Starting...
+2024-10-21 15:36:02 [INFO] - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-21 15:36:02 [INFO] - HikariPool-1 - Start completed.
+2024-10-21 15:36:02 [INFO] - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-21 15:36:02 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21 15:36:02 [INFO] - HHH000412: Hibernate ORM core version 6.6.1.Final
+2024-10-21 15:36:02 [INFO] - HHH000026: Second-level cache disabled
+2024-10-21 15:36:02 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21 15:36:02 [WARN] - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21 15:36:02 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-10-21 15:36:03 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21 15:36:03 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21 15:36:03 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21 15:36:04 [INFO] - Tomcat started on port 8080 (http) with context path '/'
+2024-10-21 15:36:04 [INFO] - Started Main in 2.762 seconds (process running for 2.975)
+2024-10-21 15:38:25 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21 15:38:25 [INFO] - Initializing Servlet 'dispatcherServlet'
+2024-10-21 15:38:25 [INFO] - Completed initialization in 1 ms
+2024-10-21 15:38:25 [INFO] - ------------------- Endpoint: /movies/bulk метод: POST---------------------------
+2024-10-21 15:38:25 [ERROR] - POST запрос без тела

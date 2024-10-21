@@ -6,12 +6,14 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 /**
  * Параметры запроса на сервер для поиска фильма по названию
  */
 @Getter
+@Setter
 @EqualsAndHashCode
 @ToString
 public class MovieRequestParams {

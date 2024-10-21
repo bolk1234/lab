@@ -25,6 +25,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
+import java.util.stream.Collectors;
 
 /**
  * Получить данные о фильмах из API кинопоиска
@@ -33,15 +34,10 @@ import java.util.concurrent.ExecutorService;
 @Slf4j
 public class MovieService {
 
-    private final String BASE_URL = "https://api.kinopoisk.dev/v1.4/movie/search?";     // API кинопоиска
-    private final String PAGE = "&page=";     // ответ может быть на несколько страниц, номер текущей страницы
-    private final String LIMIT = "&limit=";     // сколько элементов на страницу, значение 1 значит забрать только один элемент
-    private final String TITLE = "&query=";     // название фильма
-
     @Autowired
-    private RestTemplate restTemplate;                                    // клиент для HTTP запросов
+    MovieApiService movieApiService;                                    // подключение к API кинопоиска
     @Autowired
-    private ObjectMapper objectMapper;                                   // сериализация/десериализация (класс из библиотеки Jackson)
+    private RequestCounter requestCounter;                              // счётчик обращений к текущему сервису
     @Autowired
     private SimpleCache<String, List<Movie>> movieSimpleCache;        // кеширование фильмов title/фильмы из АПИ
     @Autowired
@@ -50,8 +46,7 @@ public class MovieService {
     private GenreRepository genreRepository;                            // репозиторий жанров
     @Autowired
     private CountryRepository countryRepository;                        // репозиторий стран
-    @Autowired
-    private RequestCounter requestCounter;                              // счётчик обращений к текущему сервису
+
     @Autowired
     ExecutorService executorService;
 
@@ -101,10 +96,10 @@ public class MovieService {
         }
 
         // json ответ от сервера
-        String responseJsonFromApi = getJsonFromAPi(movieRequestParams);
+        String responseJsonFromApi = movieApiService.restTemplateGet(movieRequestParams);
 
         // json ответ от сервера преобразуем в объект
-        ResponseDataFromApi<Movie> responseDataFromApi = deserializeResponseData(responseJsonFromApi);
+        ResponseDataFromApi<Movie> responseDataFromApi =  movieApiService.deserializeResponseData(responseJsonFromApi);
 
         //очистка от мусора
         List<Movie> movies = clearMovie(responseDataFromApi.getDocs());
@@ -124,79 +119,24 @@ public class MovieService {
         return movies;
     }
 
-    /**
-     * Получить список фильмов по заданным параметрам
-     * @param movieRequestParams - параметры запроса
-     * @return json ответ
-     */
-    private String getJsonFromAPi(MovieRequestParams movieRequestParams) {
-        return restTemplateGet(movieRequestParams);
-    }
 
-    /**
-     * Запрос к API кинопоиска
-     * @param movieRequestParams - параметры запроса, которые пришли от клиента
-     * @return json ответ
-     */
-    private String restTemplateGet(MovieRequestParams movieRequestParams) {
-
-        String url = BASE_URL + PAGE + movieRequestParams.getPage() + LIMIT + movieRequestParams.getLimit() + TITLE + movieRequestParams.getTitle();
-
-        // ответ от кинопоиска
-        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
-
-        logger.info("был выполнен запрос к API кинопоиска");
-        // тело ответа
-        return response.getBody();
-    }
-
-    /**
-     * Десериализация ответа от API кинопоиска
-     * @param jsonString - json ответ
-     * @return десериализованные данные ответа
-     */
-    private ResponseDataFromApi<Movie> deserializeResponseData(String jsonString) {
-        try {
-            return objectMapper.readValue(jsonString, new TypeReference<ResponseDataFromApi<Movie>>() {});
-        } catch (JsonProcessingException e) {
-            logger.error("Ошибка десериализации json ответа от API кинопоиска: " + jsonString);
-
-            throw CustomException.builder()
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .message("Внутренняя ошибка сервера")
-                    .build();
-        }
-    }
-
-    /** Не то чтобы и нужен
-     * Сериализация фильмов для отправки клиенту
-     * @param movies - фильмы
-     * @return - json строка
-
-    private String serializeResponseData(List<Movie> movies) {
-        try {
-            return objectMapper.writeValueAsString(movies);
-        } catch (JsonProcessingException e) {
-            logger.error("Ошибка сериализации списка фильмов для ответа клиенту: " + movies.toString());
-
-            throw CustomException.builder()
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .message("Внутренняя ошибка сервера")
-                    .build();
-        }
-    }
-     */
 
     /**
      * API кинопоиска иногда возвращает некорректные результаты,
      * возвращает поле, где название фильма пустое
      * причина - ошибочная запись в их базе данных
      * надо такое удалить
+     * примеры запроса: aas, sd
      */
     private List<Movie> clearMovie(List<Movie> movies) {
-        // лямбда-выражение для удаления элементов из коллекции (Добавлена в java 8)
-        if (movies.removeIf(temp -> temp.getName() == null || temp.getName().isEmpty())) {
-            logger.info("был удалён как минимум один фильм с пустым именем");
+        // собираем фильмы с пустыми называниями
+        List<Movie> removedMovies = movies.stream()
+                .filter(temp -> temp.getName() == null || temp.getName().isEmpty())
+                .toList();
+
+        if (!removedMovies.isEmpty()) {
+            removedMovies.forEach(movie -> logger.info("был удалён фильм с пустым именем, id в базе кинопоиска: " + movie.getKinoPoiskId()));
+            movies.removeAll(removedMovies);
         }
         return movies;
     }
