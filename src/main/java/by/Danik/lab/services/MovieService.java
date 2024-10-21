@@ -56,12 +56,14 @@ public class MovieService {
     ExecutorService executorService;
 
 
-        /**
-         * Пришёл запрос на фильмы методом GET
-         * @param movieRequestParams - параметры запроса
-         * @return
-         */
+    /**
+     * Пришёл запрос на фильмы методом GET
+     * @param movieRequestParams - параметры запроса
+     * @return
+     */
     public List<Movie> methodGet(MovieRequestParams movieRequestParams) {
+        // увеличиваем счётчик запросов сервиса
+        executorService.submit(requestCounter::increment);
         return getMovieByTitle(movieRequestParams);
     }
 
@@ -72,6 +74,9 @@ public class MovieService {
      * @return
      */
     public List<List<Movie>> methodPostBulk(List<String> titles){
+
+        // Bulk запрос считаем как один, не смотря что внутри несколько запросов
+        executorService.submit(requestCounter::increment);
 
         // stream - превращает в поток данных
         // map - один из методов stream, принимает параметр лямбда-выражение, создаёт новый поток, не изменяя исходный
@@ -88,9 +93,6 @@ public class MovieService {
      * @return json строка
      */
     private List<Movie> getMovieByTitle(MovieRequestParams movieRequestParams) {
-
-        // увеличиваем счётчик обращений в отдельном потоке, чтобы не блокировать текущий
-        executorService.submit(requestCounter::increment);
 
         // проверяем возможно есть в кеше
         if(movieSimpleCache.containsKey(movieRequestParams.getTitle())) {
